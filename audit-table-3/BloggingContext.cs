@@ -14,7 +14,7 @@ namespace audittable
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Your Connection String Goes here.");
+            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=AuditTableDB;Integrated Security=true");
         }
         public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
